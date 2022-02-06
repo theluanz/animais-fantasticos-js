@@ -37,5 +37,6 @@ export default class TabNav {
       }
     });
     this.tabContent[0].classList.add(this.tabContent[0].dataset.anime);
+    return this;
   }
 }
