@@ -39,4 +39,4 @@ const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init();
 
 const openingHours = new OpeningHours('[data-wekeend]', '[data-hours]');
-console.log(openingHours.init());
+openingHours.init();
