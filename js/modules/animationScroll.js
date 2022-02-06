@@ -19,7 +19,6 @@ export default class AnimationScroll {
   }
 
   checkDistance() {
-    console.log('Checking distance');
     this.distance.forEach((item) => {
       if (window.pageYOffset > item.offset) {
         item.element.classList.add('ativo');

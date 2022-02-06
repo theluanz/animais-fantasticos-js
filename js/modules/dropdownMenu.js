@@ -9,13 +9,11 @@ export default class DropdownMenu {
     } else {
       this.events = events;
     }
-    console.log(this.events);
     this.activeDropdownMenu = this.activeDropdownMenu.bind(this);
   }
 
   activeDropdownMenu(event) {
     event.preventDefault();
-    console.log(event.currentTarget);
     this.dropdownMenu.forEach((dropdown) => {
       dropdown.classList.add(this.activeClass);
       outSideClick(dropdown, ['touchstart', 'click'], () => {
