@@ -6,9 +6,9 @@ import Tooltip from './modules/tooltip.js';
 import fetchAnimals from './modules/fetchAnimals.js';
 import fetchBitcoin from './modules/fetchBitcoin.js';
 import AnimationScroll from './modules/animationScroll.js';
-
 import DropdownMenu from './modules/dropdownMenu.js';
-import initMenuMobile from './modules/menuMobile.js';
+import MenuMobile from './modules/menuMobile.js';
+
 import initHours from './modules/hours.js';
 
 const smoothScroll = new SmoothScroll('[data-anime="menu"] a[href^="#"]');
@@ -36,5 +36,7 @@ animationScroll.init();
 const dropdownMenu = new DropdownMenu('[data-dropdown]');
 dropdownMenu.init();
 
-initMenuMobile();
+const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
+menuMobile.init();
+
 initHours();
