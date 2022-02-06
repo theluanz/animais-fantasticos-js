@@ -12,7 +12,6 @@ export default class initModal {
   }
 
   eventToggleModal(event) {
-    console.log('eventToggleMod');
     event.preventDefault();
     this.toggleModal();
   }
@@ -24,7 +23,6 @@ export default class initModal {
   }
 
   addModalEvents() {
-    console.log('addModalEvents');
     this.openButton.addEventListener('click', this.eventToggleModal);
     this.closeButton.addEventListener('click', this.eventToggleModal);
     this.containerModal.addEventListener('click', this.clickOver);

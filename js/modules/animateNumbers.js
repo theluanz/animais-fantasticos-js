@@ -8,7 +8,6 @@ export default class AnimateNumbers {
   }
 
   static incrementNumber(number) {
-    console.log('Increment');
     const value = +number.innerText;
     let start = 0;
     const increment = Math.ceil(value / 100);
