@@ -7,7 +7,7 @@ import fetchAnimals from './modules/fetchAnimals.js';
 import fetchBitcoin from './modules/fetchBitcoin.js';
 import AnimationScroll from './modules/animationScroll.js';
 
-import initDropdownMenu from './modules/dropdownMenu.js';
+import DropdownMenu from './modules/dropdownMenu.js';
 import initMenuMobile from './modules/menuMobile.js';
 import initHours from './modules/hours.js';
 
@@ -33,6 +33,8 @@ fetchBitcoin('https://blockchain.info/ticker', '.btc-preco');
 const animationScroll = new AnimationScroll('[data-anime="scroll"]');
 animationScroll.init();
 
-initDropdownMenu();
+const dropdownMenu = new DropdownMenu('[data-dropdown]');
+dropdownMenu.init();
+
 initMenuMobile();
 initHours();
