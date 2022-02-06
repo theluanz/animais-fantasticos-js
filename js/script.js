@@ -8,8 +8,7 @@ import fetchBitcoin from './modules/fetchBitcoin.js';
 import AnimationScroll from './modules/animationScroll.js';
 import DropdownMenu from './modules/dropdownMenu.js';
 import MenuMobile from './modules/menuMobile.js';
-
-import initHours from './modules/hours.js';
+import OpeningHours from './modules/openingHours.js';
 
 const smoothScroll = new SmoothScroll('[data-anime="menu"] a[href^="#"]');
 smoothScroll.init();
@@ -39,4 +38,5 @@ dropdownMenu.init();
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init();
 
-initHours();
+const openingHours = new OpeningHours('[data-wekeend]', '[data-hours]');
+console.log(openingHours.init());
