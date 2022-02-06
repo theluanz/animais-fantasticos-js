@@ -3,13 +3,13 @@ import Accordion from './modules/accordionAnimate.js';
 import TabNav from './modules/tabNavigator.js';
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
+import fetchAnimals from './modules/fetchAnimals.js';
+import fetchBitcoin from './modules/fetchBitcoin.js';
+import AnimationScroll from './modules/animationScroll.js';
 
-import initAnimationScroll from './modules/animationOnScroll.js';
 import initDropdownMenu from './modules/dropdownMenu.js';
 import initMenuMobile from './modules/menuMobile.js';
 import initHours from './modules/hours.js';
-import fetchAnimals from './modules/fetchAnimals.js';
-import fetchBitcoin from './modules/fetchBitcoin.js';
 
 const smoothScroll = new SmoothScroll('[data-anime="menu"] a[href^="#"]');
 smoothScroll.init();
@@ -27,9 +27,12 @@ const tooltip = new Tooltip('[data-tooltip]');
 tooltip.init();
 
 fetchAnimals('./animaisapi.json', '.numeros-grid');
+
 fetchBitcoin('https://blockchain.info/ticker', '.btc-preco');
 
-initAnimationScroll();
+const animationScroll = new AnimationScroll('[data-anime="scroll"]');
+animationScroll.init();
+
 initDropdownMenu();
 initMenuMobile();
 initHours();
