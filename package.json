@@ -1,14 +1,13 @@
 {
-  "name": "project",
+  "name": "animais-fantasticos",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Luan Zuffo",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.17.0",
