@@ -1,12 +1,34 @@
-export default function initTabNav() {
-  const tabMenu = document.querySelectorAll('[data-tab="menu"] li');
-  const tabContent = document.querySelectorAll('[data-tab="content"] section');
-  function datasetDist() {
-    const sectionAnimals = document.querySelectorAll(
-      '.animais-descricao section',
-    );
+export default class TabNav {
+  constructor(menu, content) {
+    this.tabMenu = document.querySelectorAll(menu);
+    this.tabContent = document.querySelectorAll(content);
+    this.active = 'ativo';
+  }
 
-    sectionAnimals.forEach((item) => {
+  activeTab(index) {
+    this.tabContent.forEach((item) => {
+      item.classList.remove(this.active);
+    });
+    this.tabContent[index].classList.add(this.active, this.tabContent[index].dataset.anime);
+  }
+
+  addTabNavEvent() {
+    this.tabMenu.forEach((item, index) => {
+      item.addEventListener('click', () => this.activeTab(index));
+    });
+  }
+
+  init() {
+    this.datasetDist();
+
+    if (this.tabContent.length && this.tabMenu.length) {
+      this.addTabNavEvent();
+      this.activeTab(0);
+    }
+  }
+
+  datasetDist() {
+    this.tabContent.forEach((item) => {
       const n = Math.round(Math.random());
       if (n) {
         item.setAttribute('data-anime', 'show-right');
@@ -14,22 +36,6 @@ export default function initTabNav() {
         item.setAttribute('data-anime', 'show-down');
       }
     });
-    sectionAnimals[0].classList.add(sectionAnimals[0].dataset.anime);
-  }
-
-  function activeTab(index) {
-    tabContent.forEach((item) => {
-      item.classList.remove('ativo');
-    });
-    tabContent[index].classList.add('ativo', tabContent[index].dataset.anime);
-  }
-  datasetDist();
-
-  if (tabContent.length && tabMenu.length) {
-    tabMenu.forEach((item, index) => {
-      item.addEventListener('click', () => {
-        activeTab(index);
-      });
-    });
+    this.tabContent[0].classList.add(this.tabContent[0].dataset.anime);
   }
 }
