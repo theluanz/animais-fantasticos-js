@@ -17,6 +17,7 @@ export default class Slide {
     this.activeNextSlide = this.activeNextSlide.bind(this);
 
     this.onResize = debounce(this.onResize.bind(this), 300);
+    this.changeEvent = new Event('changeEvent');
   }
 
   onStart(event) {
@@ -87,6 +88,7 @@ export default class Slide {
     this.slidesIndexNav(index);
     this.dist.finalPosition = activeSlide.position;
     this.changeActiveClass();
+    this.wrapper.dispatchEvent(this.changeEvent);
   }
 
   slidesIndexNav(index) {
