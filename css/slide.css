@@ -9,15 +9,31 @@ img{
 .slide{
   display: flex;
 }
-
+.slide:hover{
+  will-change: transform;
+}
 .slide li{
   flex-shrink: 0;
   width: 80vw;
   max-width:800px;
   margin: 0px 20px;
+  opacity: .8;
+  overflow: hidden;
+  transform: scale(.8);
+  transition: transform .3s;
 }
+.slide li img{
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.4);
+}
+
 .slide li:first-child{
   margin-left: 5vw;
+}
+.slide li.active{
+  opacity: 1;
+  transform: scale(1)
 }
 /* .slide {
   transform: translate3d(-968px,0,0);
