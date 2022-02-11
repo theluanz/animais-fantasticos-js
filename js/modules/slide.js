@@ -50,12 +50,12 @@ export default class Slide {
 
   moveSlide(distX) {
     this.dist.movePosition = distX;
-    this.slide.style.transform = `translate3d(-${distX}px, 0, 0)`;
+    this.slide.style.transform = `translate3d(${distX}px, 0, 0)`;
   }
 
   updatePosition(clientX) {
     this.dist.movement = (this.dist.startX - clientX) * 1.6;
-    return this.dist.finalPosition + this.dist.movement;
+    return this.dist.finalPosition - this.dist.movement;
   }
 
   addSlideEvents() {
@@ -79,7 +79,7 @@ export default class Slide {
 
   slidePosition(slide) {
     const margin = (this.wrapper.offsetWidth - slide.offsetWidth) / 2;
-    return (slide.offsetLeft - margin);
+    return -(slide.offsetLeft - margin);
   }
 
   changeSlide(index) {
