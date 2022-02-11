@@ -13,6 +13,9 @@ export default class Slide {
     this.onStart = this.onStart.bind(this);
     this.onEnd = this.onEnd.bind(this);
     this.onMove = this.onMove.bind(this);
+    this.activePrevSlide = this.activePrevSlide.bind(this);
+    this.activeNextSlide = this.activeNextSlide.bind(this);
+
     this.onResize = debounce(this.onResize.bind(this), 300);
   }
 
@@ -123,7 +126,6 @@ export default class Slide {
 
   changeActiveClass() {
     this.slidesArray.forEach((item) => item.element.classList.remove(this.activeClass));
-
     this.slidesArray[this.index.active].element.classList.add(this.activeClass);
   }
 

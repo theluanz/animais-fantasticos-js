@@ -9,7 +9,7 @@
 // import DropdownMenu from './modules/dropdownMenu.js';
 // import MenuMobile from './modules/menuMobile.js';
 // import OpeningHours from './modules/openingHours.js';
-import Slide from './modules/slide.js';
+import SlideNav from './modules/slideNav.js';
 
 // const smoothScroll = new SmoothScroll('[data-anime="menu"] a[href^="#"]');
 // smoothScroll.init();
@@ -42,5 +42,6 @@ import Slide from './modules/slide.js';
 // const openingHours = new OpeningHours('[data-wekeend]', '[data-hours]');
 // openingHours.init();
 
-const slide = new Slide('.slide', '.slide-wrapper');
+const slide = new SlideNav('.slide', '.slide-wrapper');
 slide.init();
+slide.addArrow('.prev', '.next');
